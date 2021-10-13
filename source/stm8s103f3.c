@@ -112,3 +112,34 @@ void setPinState(const uint8_t p, const uint8_t state)
         break;
     }
 }
+
+_Bool getPinState(const uint8_t port_pin)
+{
+    uint8_t port = (port_pin >> 4) & 0xF;
+    uint8_t pin = port_pin & 0xF;
+
+    switch (port)
+    {
+    case 0xA:
+        if (PA_IDR ^ (1 << pin) == (0 << pin))
+            return 1;
+        break;
+    case 0xB:
+        if (PB_IDR ^ (1 << pin) == (0 << pin))
+            return 1;
+        break;
+    case 0xC:
+        if (PC_IDR ^ (1 << pin) == (0 << pin))
+            return 1;
+        break;
+    case 0xD:
+        if (PD_IDR ^ (1 << pin) == (0 << pin))
+            return 1;
+        break;
+
+    default:
+        break;
+    }
+
+    return 0;
+}

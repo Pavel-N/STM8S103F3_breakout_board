@@ -72,21 +72,20 @@
 #define OPEN_DRAIN_OUTPUT_FAST 0b101 // Open Drain Output Fast mode
 #define PUSHPULL_OUTPUT        0b110 // Push-pull output
 #define PUSHPULL_OUTPUT_FAST   0b111 // Push-pull Output Fast mode
-// NOTE #define TRUE_OPEN_DRAIN_OUTPUT 0b100 // True Open Drain (0b1XX)
 
 
 // FUNCTIONS
 
-extern void init();
+void init();
 
-extern void Delay_ms(const uint32_t value, const uint16_t delay_multiplier);
+void Delay_ms(const uint32_t value, const uint16_t delay_multiplier);
 
 static void _setReg(uint8_t *reg, const uint8_t pos, const _Bool val);
-
-// TODO _Bool getState(byte *IDR, byte port_number);
 
 void setPinMode(const uint8_t port_pin, const uint8_t pin_mode);
 
 void setPinState(const uint8_t pin, const uint8_t state);
+
+_Bool getPinState(const uint8_t port_pin);
 
 #endif

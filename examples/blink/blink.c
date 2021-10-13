@@ -18,20 +18,21 @@ int main()
     
     // Initialize pin B5 to push-pull output
     setPinMode(B5, PUSHPULL_OUTPUT);
-    setPinMode(A1, PUSHPULL_OUTPUT);
 
-    // Infnite Loop
+
 	while (1)
 	{
-        // Set pin state to high
-        setPinState(B5, HIGH);
-        setPinState(A1, HIGH);
-        // Wait ~1sec
-        Delay_ms(1000, DELAY_MUL_16);
-        // Set pin state to low
-        setPinState(B5, LOW);
-        setPinState(A1, LOW);
-        // Again, wat ~1sec
-        Delay_ms(1000, DELAY_MUL_16);        
+        if (getPinState(D1) == 0)
+        {
+            setPinState(B5, HIGH);       
+            setPinState(A1, HIGH); 
+        }
+        else 
+        {
+            setPinState(B5, LOW);       
+            setPinState(A1, LOW); 
+        }   
+
+        Delay_ms(100, DELAY_MUL_16);    
 	}   
 }
