@@ -27,7 +27,7 @@
 
 // Clock
 #define CLK_CKDIVR   *(volatile uint8_t *)0x50C6   // Clock divider register
-#define DELAY_MUL_16 635                // Delay mutliplier for 16Mhz
+#define DELAY_MUL_16 635                           // Delay mutliplier for 16Mhz
 
 // Port A
 #define PA_ODR       *(volatile uint8_t *)0x5000   // Port A Output Data Register
