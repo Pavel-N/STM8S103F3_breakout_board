@@ -12,5 +12,5 @@ verify:
 	stm8flash -p stm8s103f3 -c stlinkv2 -v MAIN_HEX.ihx 
 
 cleanup:
-	del blink_hex.*
-	del stm8s103f3_compiled.*
+	rm blink_hex.*
+	rm stm8s103f3_compiled.*

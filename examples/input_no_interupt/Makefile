@@ -12,5 +12,5 @@ verify:
 	stm8flash -p stm8s103f3 -c stlinkv2 -v MAIN_HEX.ihx 
 
 cleanup:
-	del input_no_interupt_hex.*
-	del stm8s103f3_compiled.*
+	rm input_no_interupt_hex.*
+	rm stm8s103f3_compiled.*

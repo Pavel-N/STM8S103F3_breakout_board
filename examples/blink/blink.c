@@ -22,17 +22,12 @@ int main()
 
 	while (1)
 	{
-        if (getPinState(D1) == 0)
-        {
-            setPinState(B5, HIGH);       
-            setPinState(A1, HIGH); 
-        }
-        else 
-        {
-            setPinState(B5, LOW);       
-            setPinState(A1, LOW); 
-        }   
+        setPinState(B5, HIGH);
 
-        Delay_ms(100, DELAY_MUL_16);    
+        Delay_ms(1000, DELAY_MUL_16);
+
+        setPinState(B5, LOW);
+
+        Delay_ms(1000, DELAY_MUL_16);
 	}   
 }
